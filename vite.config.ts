@@ -5,8 +5,10 @@ import vue from "@vitejs/plugin-vue";
 //配置vite的JSX语法转译工具插件@vitejs/plugin-vue-jsx
 import vueJsx from '@vitejs/plugin-vue-jsx';
 //在 Vite 中添加 UnoCSS 插件
-import { presetUno, presetAttributify, presetIcons } from "unocss";
-import Unocss from "unocss/vite";
+//import { presetUno, presetAttributify, presetIcons } from "unocss";
+//import Unocss from "unocss/vite";
+//由于需要定制安全列表，引入重构的unocss配置
+import Unocss from "./config/unocss";
 
 //配置导出模型类型并确定导出的文件名
 const rollupOptions = {
@@ -30,9 +32,12 @@ export default defineConfig({
     plugins: [
         vue(),
         vueJsx(),
-        Unocss({
-            presets: [presetUno(), presetAttributify(), presetIcons()],
-        })],//添加插件
+        // Unocss({
+        //     presets: [presetUno(), presetAttributify(), presetIcons()],
+        // })
+        ////重构后的unocss配置
+        Unocss(),
+    ],//添加插件
 
     // 添加库模式配置,配置导出模型类型并确定导出的文件名
     build: {
@@ -45,6 +50,7 @@ export default defineConfig({
             // 导出模块格式
             formats: ["es", "umd", "iife"],
         },
+        cssCodeSplit: true,//决定在编译的时候是否要独立输出 css,Build 时单独导出 CSS
     },
 });
 
