@@ -29,7 +29,7 @@ export const props = {
     //尺寸
     size: {
         type: String as PropType<ISize>,
-        default: 'large'
+        default: 'medium'
     },
     //是否圆角按钮
     round: {
@@ -40,6 +40,11 @@ export const props = {
     icon: {
         type: String,
         default: '',
+    },
+    //是否圆形
+    circle: {
+        type: Boolean,
+        default: false,
     }
 } as const;
 export default defineComponent({
@@ -54,34 +59,35 @@ export default defineComponent({
             },
             medium: {
                 x: "3",
-                y: "1.5",
+                y: "2",
                 text: "base",
             },
             large: {
-                x: "4",
+                x: "5",
                 y: "2",
                 text: "lg",
             },
         }
         return () => <button
             class={`
-          ${props.plain ? "text-" + props.color + "-500" : "text-" + "white"}
-          py-${size[props.size].y}
-          px-${size[props.size].x}
-          ${props.round ? "rounded-full" : "rounded-lg"}
-          bg-${props.color}-500
-          ${props.plain ? "bg-opacity-20" : "bg-opacity-100"}
-          hover:bg-${props.color}-400
-          hover:bg-opacity-60
-          border-${props.color}-500
-          cursor-pointer
-          border-solid
-          text-${props.plain ? props.color + "-500" : "white-500"}
-          text-${size[props.size].text}
-          hover:text-white
-          transition duration-300 ease-in-out transform hover:scale-105
-          mx-1
-          `}
+        ${props.plain ? "text-" + props.color + "-500" : "text-" + "white"}
+        py-${size[props.size].y}
+        px-${size[props.size].x}
+        ${props.round || props.circle ? "rounded-full" : "rounded-xl"}
+        ${props.circle ? "w-12 h-12  inline-flex items-center justify-center" : ""}
+        bg-${props.color}-500
+        ${props.plain ? "bg-opacity-20" : "bg-opacity-100"}
+        hover:bg-${props.color}-400
+        hover:bg-opacity-60
+        border-${props.color}-500
+        cursor-pointer
+        border-solid
+        text-${props.plain ? props.color + "-500" : "white-500"}
+        text-${size[props.size].text}
+        hover:text-white
+        transition duration-300 ease-in-out transform hover:scale-105
+        mx-1
+        `}
         >
             {props.icon !== "" ? <i class={`i-ic-baseline-${props.icon} p-3`}></i> : ""}
             {slots.default ? slots.default() : ''}
@@ -90,4 +96,3 @@ export default defineComponent({
 });
 
 //unocss.ts安全序列
-//圆形按钮 circle

@@ -2,7 +2,7 @@
 常⽤操作按钮
 ## 基础⽤法
 基础的函数⽤法
-:::demo 使⽤`size`、`color`、`pain`、`round`属性来定义 Button 的样式。
+:::demo 使⽤`size`、`color`、`pain`、`round`、`circle`属性来定义 Button 的样式。
 ```vue
 <template>
 <div style="margin-bottom:20px;">
@@ -11,7 +11,8 @@
  <SButton color="gray">灰⾊按钮</SButton>
  <SButton color="yellow">⻩⾊按钮</SButton>
  <SButton color="red">红⾊按钮</SButton>
- <SButton color="pink">红⾊按钮</SButton>
+ <SButton color="pink">粉色按钮</SButton>
+ <SButton color="purple">紫色按钮</SButton>
 </div>
 <div style="margin-bottom:20px;">
  <SButton color="blue" plain>朴素按钮</SButton>
@@ -19,6 +20,7 @@
  <SButton color="gray" plain>灰⾊按钮</SButton>
  <SButton color="yellow" plain>⻩⾊按钮</SButton>
  <SButton color="red" plain>红⾊按钮</SButton>
+ <SButton color="purple" plain>紫⾊按钮</SButton>
 </div>
 <div style="margin-bottom:20px;">
  <SButton size="small" plain>⼩按钮</SButton>
@@ -40,12 +42,18 @@
  <SButton color="red" round plain icon="delete"></SButton>
 </div>
 <div style="margin-bottom:20px;">
- <SButton color="blue" circle>此</SButton>
- <SButton color="green" circle>处</SButton>
- <SButton color="gray" circle>要</SButton>
- <SButton color="yellow" circle>搞</SButton>
- <SButton color="red" circle>圆</SButton>
- <SButton color="pink" circle>形</SButton>
+ <SButton color="blue" round icon="search">搜索按钮</SButton>
+ <SButton color="green" round icon="edit">编辑按钮</SButton>
+ <SButton color="gray" round icon="check">成功按钮</SButton>
+ <SButton color="yellow" round icon="message">提示按钮</SButton>
+ <SButton color="red" round icon="delete">删除按钮</SButton>
+</div>
+<div style="margin-bottom:20px;">
+ <SButton color="blue" circle icon="search"></SButton>
+ <SButton color="green" circle icon="edit"></SButton>
+ <SButton color="gray" circle icon="check"></SButton>
+ <SButton color="yellow" circle icon="message"></SButton>
+ <SButton color="red" circle icon="delete"></SButton>
 </div>
 </template>
 ```
