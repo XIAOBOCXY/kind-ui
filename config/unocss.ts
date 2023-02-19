@@ -56,6 +56,7 @@ const safelist = [
         "delete",
         "add",
         "share",
+        "star-rate",
     ].map((v) => `i-ic-baseline-${v}`),
 ];
 export default () =>

@@ -2,7 +2,8 @@ import { defineComponent, PropType, toRefs } from "vue";
 import "uno.css";
 
 export type IColor =
-    'black'
+    "white"
+    | 'black'
     | 'gray'
     | 'red'
     | 'yellow'
@@ -70,23 +71,23 @@ export default defineComponent({
         }
         return () => <button
             class={`
-        ${props.plain ? "text-" + props.color + "-500" : "text-" + "white"}
-        py-${size[props.size].y}
-        px-${size[props.size].x}
-        ${props.round || props.circle ? "rounded-full" : "rounded-xl"}
-        ${props.circle ? "w-12 h-12  inline-flex items-center justify-center" : ""}
-        bg-${props.color}-500
-        ${props.plain ? "bg-opacity-20" : "bg-opacity-100"}
-        hover:bg-${props.color}-400
-        hover:bg-opacity-60
-        border-${props.color}-500
-        cursor-pointer
-        border-solid
-        text-${props.plain ? props.color + "-500" : "white-500"}
-        text-${size[props.size].text}
-        hover:text-white
-        transition duration-300 ease-in-out transform hover:scale-105
-        mx-1
+            py-${size[props.size].y}
+            px-${size[props.size].x}
+            ${props.round || props.circle ? "rounded-full" : "rounded-xl"}
+            ${props.circle ? "w-12 h-12  inline-flex items-center justify-center" : ""}
+            ${props.color === 'white' ? "bg-white" : "bg-" + props.color + "-500"}
+            ${props.color === 'white' ? "border-black-500" : "border-" + props.color + "-500"}
+            ${props.plain ? "bg-opacity-20" : "bg-opacity-100"}
+            ${props.color === 'white' && props.plain ? "text-black-500 hover:text-blue-500 hover:border-blue-500" : ""}
+            ${props.color != 'white' && props.plain ? "text-" + props.color + "-500 hover:text-white" : ""}
+            ${props.color === 'white' && !props.plain ? "text-black-500 hover:text-white hover:border-blue-500 hover:bg-blue-400" : ""}
+            ${props.color != 'white' && !props.plain ? "text-white hover:bg-" + props.color + "-400" : ""}
+            hover:bg-opacity-60
+            cursor-pointer
+            border-solid
+            text-${size[props.size].text}
+            transition duration-300 ease-in-out transform hover:scale-105
+            m-1
         `}
         >
             {props.icon !== "" ? <i class={`i-ic-baseline-${props.icon} p-3`}></i> : ""}
