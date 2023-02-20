@@ -1,4 +1,4 @@
-import demoBlock from 'vitepress-theme-demoblock'
+import { demoBlockPlugin } from 'vitepress-theme-demoblock'
 const sidebar = {
     '/': [
         { text: '快速开始', link: '/' },
@@ -15,14 +15,13 @@ const sidebar = {
         { text: '布局' },
     ]
 }
-
 const config = {
     themeConfig: {
         sidebar,
     },
     markdown: {
         config: (md) => {
-            const { demoBlockPlugin } = demoBlock
+            // 添加DemoBlock插槽
             md.use(demoBlockPlugin)
         }
     }

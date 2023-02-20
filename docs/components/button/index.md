@@ -2,89 +2,61 @@
 常⽤操作按钮
 ## 基础⽤法
 基础的按钮⽤法
-:::demo 使⽤`size`、`color`、`pain`、`round`、`circle`属性来定义 Button 的样式。
+:::demo 使⽤`size`、`color`、`pain`、`round`、`circle`属性来定义 Button 的样式
 ```vue
 <template>
-  <div style="margin-bottom:10px;">
-    <SButton color="white">主要按钮</SButton>
-    <SButton color="blue">蓝色按钮</SButton>
-    <SButton color="green">绿⾊按钮</SButton>
-    <SButton color="gray">灰⾊按钮</SButton>
-    <SButton color="yellow">⻩⾊按钮</SButton>
-    <SButton color="red">红⾊按钮</SButton>
-  </div> 
-  <div style="margin-bottom:10px;">
-    <SButton color="white" plain>朴素按钮</SButton>
-    <SButton color="blue" plain>蓝色按钮</SButton>
-    <SButton color="green" plain>绿⾊按钮</SButton>
-    <SButton color="gray" plain>灰⾊按钮</SButton>
-    <SButton color="yellow" plain>⻩⾊按钮</SButton>
-    <SButton color="red" plain>红⾊按钮</SButton>
+  <div style="margin-bottom:20px;">
+    <KindButton>默认按钮</KindButton>
+    <KindButton type="primary">主要按钮</KindButton>
+    <KindButton type="success">绿色按钮</KindButton>
+    <KindButton type="info">灰色按钮</KindButton>
+    <KindButton type="danger">黄色按钮</KindButton>
+    <KindButton type="warning">红色按钮</KindButton>
   </div>
-  <div style="margin-bottom:10px;">
-    <SButton color="blue" round>圆角按钮</SButton>
-    <SButton color="green" round>绿⾊按钮</SButton>
-    <SButton color="gray" round>灰⾊按钮</SButton>
-    <SButton color="yellow" round>⻩⾊按钮</SButton>
-    <SButton color="red" round>红⾊按钮</SButton>
+  <div style="margin-bottom:20px;">
+    <KindButton plain>默认按钮</KindButton>
+    <KindButton type="primary" plain>主要按钮</KindButton>
+    <KindButton type="success" plain>绿色按钮</KindButton>
+    <KindButton type="info" plain>灰色按钮</KindButton>
+    <KindButton type="danger" plain>黄色按钮</KindButton>
+    <KindButton type="warning" plain>红色按钮</KindButton>
   </div>
-  <div style="margin-bottom:10px;">
-    <SButton color="blue" circle icon="search"></SButton>
-    <SButton color="green" circle icon="edit"></SButton>
-    <SButton color="gray" circle icon="check"></SButton>
-    <SButton color="yellow" circle icon="message"></SButton>
-    <SButton color="yellow" circle icon="star-rate"></SButton>
-    <SButton color="red" circle icon="delete"></SButton>
+  <div style="margin-bottom:20px;">
+    <KindButton round>默认按钮</KindButton>
+    <KindButton type="primary" round>主要按钮</KindButton>
+    <KindButton type="success" round>绿色按钮</KindButton>
+    <KindButton type="info" round>灰色按钮</KindButton>
+    <KindButton type="danger" round>黄色按钮</KindButton>
+    <KindButton type="warning" round>红色按钮</KindButton>
   </div>
-
-
-  
-  <div style="margin-bottom:10px;">
-    <SButton size="small" plain>⼩按钮</SButton>
-    <SButton size="medium" plain>中按钮</SButton>
-    <SButton size="large" plain>⼤按钮</SButton>
+  <div style="margin-bottom:20px;">
+    <KindButton plain round>默认按钮</KindButton>
+    <KindButton type="primary" plain round>主要按钮</KindButton>
+    <KindButton type="success" plain round>绿色按钮</KindButton>
+    <KindButton type="info" plain round>灰色按钮</KindButton>
+    <KindButton type="danger" plain round>黄色按钮</KindButton>
+    <KindButton type="warning" plain round>红色按钮</KindButton>
   </div>
-  <div style="margin-bottom:10px;">
-    <SButton color="blue" round plain icon="search">搜索按钮</SButton>
-    <SButton color="green" round plain icon="edit">编辑按钮</SButton>
-    <SButton color="gray" round plain icon="check">成功按钮</SButton>
-    <SButton color="yellow" round plain icon="message">提示按钮</SButton>
-    <SButton color="red" round plain icon="delete">删除按钮</SButton>
+  <div style="margin-bottom:20px;">
+    <KindButton circle>按</KindButton>
+    <KindButton type="primary" circle>按</KindButton>
+    <KindButton type="success" circle>按</KindButton>
+    <KindButton type="info" circle>按</KindButton>
+    <KindButton type="danger" circle>按</KindButton>
+    <KindButton type="warning" circle>按</KindButton>
   </div>
-  <div style="margin-bottom:10px;">
-    <SButton color="blue" round plain icon="search"></SButton>
-    <SButton color="green" round plain icon="edit"></SButton>
-    <SButton color="gray" round plain icon="check"></SButton>
-    <SButton color="yellow" round plain icon="message"></SButton>
-    <SButton color="red" round plain icon="delete"></SButton>
+  <div style="margin-bottom:20px;">
+    <KindButton plain circle>按</KindButton>
+    <KindButton type="primary" plain circle>按</KindButton>
+    <KindButton type="success" plain circle>按</KindButton>
+    <KindButton type="info" plain circle>按</KindButton>
+    <KindButton type="danger" plain circle>按</KindButton>
+    <KindButton type="warning" plain circle>按</KindButton>
   </div>
-  <div style="margin-bottom:10px;">
-    <SButton color="blue" round icon="search">搜索按钮</SButton>
-    <SButton color="green" round icon="edit">编辑按钮</SButton>
-    <SButton color="gray" round icon="check">成功按钮</SButton>
-    <SButton color="yellow" round icon="message">提示按钮</SButton>
-    <SButton color="red" round icon="delete">删除按钮</SButton>
+  <div style="margin-bottom:20px;">
+    <KindButton disabled>默认按钮</KindButton>
+    <KindButton type="primary" disabled>主要按钮</KindButton>
+    <KindButton type="primary" icon="Kind-icon-edit" circle></KindButton>
   </div>
-</template>
-```
-:::
-## 图标按钮
-带图标的按钮可增强辨识度（有⽂字）或节省空间（⽆⽂字）。
-:::demo 设置 icon 属性即可，icon 的列表可以参考 Element 的 icon 组件，也可以设置在⽂字右边的 icon ，只要使⽤ i 标签即可，可以使⽤⾃定义图标。
-```vue
-<template>
-  <div style="margin-bottom:10px;">
-    <SButton icon="edit" plain></SButton>
-    <SButton icon="delete" plain></SButton>
-    <SButton icon="share" plain></SButton>
-    <SButton round plain icon="search">搜索</SButton>
-  </div>
-  <div style="margin-bottom:10px;">
-    <SButton color="blue" circle plain icon="search" ></SButton>
-    <SButton color="green" circle plain icon="edit" ></SButton>
-    <SButton color="gray" circle plain icon="check" ></SButton>
-    <SButton color="yellow" circle plain icon="message" ></SButton>
-    <SButton color="red" circle plain icon="delete" ></SButton>
-  </div>
-</template>
-```
+  </template>
+  ```
